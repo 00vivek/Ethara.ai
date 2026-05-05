@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   // Axios instance for authenticated requests
   const api = axios.create({
-    baseURL: 'http://localhost:5000/api', // Will be changed for deployment
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api', // Will use environment variable for deployment
   });
 
   // Add a request interceptor to include the token
